@@ -10,6 +10,11 @@ typedef struct posI {
         int y;
 } posI;
 
+typedef struct posF {
+        float x;
+        int y;
+} posF;
+
 typedef struct grille {
         struct grille *hautGauche;
         struct grille *haut;
@@ -21,7 +26,9 @@ typedef struct grille {
         struct grille *basDroite;
         Uint32 casesAvant[32];
         Uint32 casesAprès[32];
+        posI pos;
         HANDLE thread;
+        bool vide;
         struct grille *next;
 } grille;
 
