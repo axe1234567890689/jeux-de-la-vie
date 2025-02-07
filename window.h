@@ -11,12 +11,6 @@ typedef struct color {
     struct color *suivant;
 } color;
 
-typedef struct fenetre {
-    SDL_Window *window;
-    SDL_Renderer *renderers;
-    bool fill;
-} fenetre;
-
 void InitWindow();
 unsigned char NewWindow(char *titre, int x, int  y, int w, int  h);
 
@@ -25,8 +19,9 @@ struct color *NewColor(unsigned char r, unsigned char g, unsigned char b, unsign
 void ChangeColor(unsigned char index, unsigned char r, unsigned char g, unsigned char b, unsigned char a);
 void ChangeColorC(unsigned char index, struct color *color);
 void DrawPoint(unsigned char index, int x, int y);
+void DrawString(unsigned char index, int x, int y, const char *s);
 void DrawLine(unsigned char index, int x1, int y1, int x2, int y2);
-void DrawRectangle(unsigned char index, int x1, int y1, int x2, int y2);
+void DrawRectangle(unsigned char index, int x1, int y1, int x2, int y2, bool fill);
 void DrawCircle(unsigned char index, int centerx, int centery, int r, bool fill);
 void Pause(int delay);
 
